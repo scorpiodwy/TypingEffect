@@ -2,15 +2,15 @@
 
 index.html is the main. To run it, just open it with any browser, or drag it into a browser.
 
-First version: typing phone number and password effect.
+## First version: typing phone number and password effect.
 In images folder, I prepare two subfolders of images, which were splited from two gif.
 There are a lot online gif splitter to use. You can use any of them to split your gif to images.
 
-About the effect:
+### About the effect:
 When user types phone number in the first input field, the Chi Cat also types.
 When user types password in the second input field, the Chi Cat turns his head.
 
-About code:
+### About code:
 Phone number input is with three methods, onkeypress, onkeydown, and onfocus.
 onkeypress directly returns a JS code block to accept numbers as input only.
 onkeydown and onfocus call two JS functions.
