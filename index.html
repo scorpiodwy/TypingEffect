@@ -1,0 +1,83 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<script src="jquery.min.js"></script>
+
+</head>
+
+
+<body>
+
+	<!-- <p id="demo"></p> -->
+	<img id="demo" src="images/gif/0.gif" style="width: 440px" />
+
+	<span><p>Hello, my phone number is</p></span>
+
+	<span> 
+	<input id="test" style="width: 440px" type="tel"
+		onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+		onkeydown="enter_effect(event)" onfocus="onUsername()" >		
+		<br>
+		<br>
+		<input id="password" style="width: 440px" type="password"
+		onkeydown="psw_effect(event)" onfocus="onPassword()" >
+	</span>
+	
+
+
+</body>
+
+
+<script type="text/javascript">
+//$('input').css('width',((input.getAttribute('placeholder').length + 1) * 8) + 'px');
+
+	var length = 0;
+	function enter_effect(event) {
+		var key = event.keyCode || event.charCode;
+
+		if (key == 8 || key == 46) { // delete key
+			length--;
+			console.log("delete");
+		} else if (key >= 48 && key <= 57) {
+			length++;
+		}
+		console.log(length);
+		if (length >= 0 && length <= 19) {
+			document.getElementById("demo").setAttribute("src", "images/gif/" + length + ".gif");
+		}else if(length > 19){
+			length=length-19;
+		}else if(length < 0){
+			length = 0;
+		}	
+	}
+	
+	function onUsername(){
+		document.getElementById("demo").setAttribute("src", "images/gif/0.gif");
+	}
+	
+	function onPassword(){
+		document.getElementById("demo").setAttribute("src", "images/gif1/0.gif");
+	}
+	
+	function psw_effect(event) {
+		var key = event.keyCode || event.charCode;
+
+		if (key == 8 || key == 46) { // delete key
+			length--;
+			console.log("delete");
+		} else {
+			length++;
+		}
+		console.log(length);
+		if (length >= 0 && length <= 29) {
+			document.getElementById("demo").setAttribute("src", "images/gif1/" + length + ".gif");
+		}else if(length > 29){
+			length=length-29;
+		}else if(length < 0){
+			length = 0;
+		}
+	}
+</script>
+</html>
